@@ -1,0 +1,36 @@
+# Render Blueprint: seriveri imwe + ububiko buhoraho (disk) bwo kubika amakuru.
+# Disk isaba plan yishyurwa (starter cyangwa isumbuyeho); reba ibiciro bya none kuri render.com/pricing.
+services:
+  - type: web
+    name: gs-muhero
+    runtime: docker
+    plan: starter
+    numInstances: 1            # SQLite yandikwa n'inzira imwe gusa: ntukongere
+    healthCheckPath: /healthz
+    disk:
+      name: gsm-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: DB_PATH
+        value: /data/gsm.sqlite
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: BASE_URL
+        sync: false            # uzayuzuza muri Render, urugero https://gsmuhero.rw
+      - key: ADMIN_NAME
+        value: Umuyobozi
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false            # nibura inyuguti 12; ukure nyuma yo kwinjira bwa mbere
+      - key: SMS_PROVIDER
+        value: console         # hindura "africastalking" nimumara kuyigerageza
+      - key: AT_USERNAME
+        sync: false
+      - key: AT_API_KEY
+        sync: false
+      - key: AT_SENDER_ID
+        sync: false
