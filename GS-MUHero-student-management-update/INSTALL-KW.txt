@@ -1,0 +1,25 @@
+GS MUHERO SCHOOL PLATFORM - STUDENT MANAGEMENT UPDATE
+
+Iyi update yoneramo Student Management: register, search, edit, deactivate/reactivate.
+
+1. Banza uhagarike server yawe (Ctrl + C muri terminal iri kuyikoresha).
+2. Kora backup:
+   Copy-Item server.js server.js.before-student-management.bak
+   Copy-Item public\app.js public\app.js.before-student-management.bak
+   Copy-Item public\style.css public\style.css.before-student-management.bak
+3. Kuramo ZIP, hanyuma uri muri project folder ukoreshe:
+   Copy-Item .\student-management-update\server.js .\server.js -Force
+   Copy-Item .\student-management-update\public\app.js .\public\app.js -Force
+   Copy-Item .\student-management-update\public\style.css .\public\style.css -Force
+4. Gerageza:
+   node --check server.js
+   node --check public\app.js
+   npm test
+5. Tangira server:
+   npm start
+6. Fungura http://localhost:3000 hanyuma winjire nka Administrator.
+
+ICYITONDERWA:
+- Ntusimbuze .env cyangwa data/gsm.sqlite.
+- Student records ntizisibwa burundu; button ya Hagarika ibashyira kuri Inactive kugira ngo amateka n'amasano y'ababyeyi bigumeho.
+- Abareba abanyeshuri (admin/teacher) bashobora gushakisha; admin ni we wenyine ushobora kwandika, guhindura no guhindura status.

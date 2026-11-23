@@ -1,10 +1,5 @@
 {
-  "name": "gs-muhero-platform",
-  "version": "1.0.0",
-  "description": "GS Muhero School: konti z'ababyeyi n'abarimu, conduite, amanota, amatangazo na SMS",
-  "main": "server.js",
-  "scripts": { "start": "node server.js", "seed": "node seed.js", "backup": "node backup.js", "test": "node test.js" },
-  "engines": { "node": ">=22.13" },
-  "license": "UNLICENSED",
+  "name": "l5sod2027",
+  "version": "0.1.0",
   "private": true
 }
